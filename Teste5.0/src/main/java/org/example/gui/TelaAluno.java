@@ -16,12 +16,10 @@ public class TelaAluno extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(10, 10));
 
-        // Cabeçalho
         JLabel lblBemVindo = new JLabel("Bem-vindo, " + aluno.getNome() + "!", SwingConstants.CENTER);
         lblBemVindo.setFont(lblBemVindo.getFont().deriveFont(Font.BOLD, 20f));
         add(lblBemVindo, BorderLayout.NORTH);
 
-        // Painel central com grid de botões
         JPanel painelBotoes = new JPanel(new GridLayout(4, 3, 15, 15));
         painelBotoes.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
@@ -53,7 +51,7 @@ public class TelaAluno extends JFrame {
 
         add(painelBotoes, BorderLayout.CENTER);
 
-        // Notificações à direita
+ 
         JTextArea areaNotificacoes = new JTextArea(
                 "Notificações:\n" +
                         "- Matrícula aberta até 30/06\n" +
@@ -64,7 +62,6 @@ public class TelaAluno extends JFrame {
         areaNotificacoes.setBorder(BorderFactory.createTitledBorder("Notificações"));
         add(areaNotificacoes, BorderLayout.EAST);
 
-        // Ações dos botões
         btnDisciplinas.addActionListener(e -> new TelaMinhasDisciplinas(aluno).setVisible(true));
         btnNotas.addActionListener(e    -> new TelaNotasHistorico(aluno).setVisible(true));
         btnMatricula.addActionListener(e-> new TelaMatricula(aluno).setVisible(true));
