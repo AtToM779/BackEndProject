@@ -23,22 +23,18 @@ public class TelaProfessor extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(10, 10));
 
-        // ----- Topo -----
         JLabel lblBemVindo = new JLabel("Bem-vindo, " + professor.getNome() + "!", SwingConstants.CENTER);
         lblBemVindo.setFont(new Font("SansSerif", Font.BOLD, 18));
         add(lblBemVindo, BorderLayout.NORTH);
 
-        // ----- Centro: seleção de disciplina e lista de alunos -----
         JPanel centro = new JPanel(new BorderLayout(10, 10));
 
-        // Combo de disciplinas
         comboDisciplinas = new JComboBox<>();
         List<Disciplina> todas = RepositorioDisciplinas.getInstance().getTodasDisciplinas();
         todas.forEach(comboDisciplinas::addItem);
         comboDisciplinas.addActionListener(e -> atualizarListaAlunos());
         centro.add(comboDisciplinas, BorderLayout.NORTH);
 
-        // Lista de alunos
         modelAlunos = new DefaultListModel<>();
         listAlunos = new JList<>(modelAlunos);
         JScrollPane scrollAlunos = new JScrollPane(listAlunos);
