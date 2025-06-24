@@ -27,7 +27,6 @@ public class TelaEventos extends JFrame {
         lblTitle.setFont(new Font("SansSerif", Font.BOLD, 20));
         panel.add(lblTitle, BorderLayout.NORTH);
 
-        // Filtro por data ou nome
         JPanel filterPanel = new JPanel(new BorderLayout(5, 5));
         txtFiltro = new JTextField();
         txtFiltro.setToolTipText("Filtrar por nome ou data (dd/MM)...");
@@ -37,7 +36,6 @@ public class TelaEventos extends JFrame {
         filterPanel.add(btnFiltro, BorderLayout.EAST);
         panel.add(filterPanel, BorderLayout.BEFORE_FIRST_LINE);
 
-        // Lista de eventos
         model = new DefaultListModel<>();
         carregarEventos();
         list = new JList<>(model);
@@ -46,7 +44,6 @@ public class TelaEventos extends JFrame {
         scroll.setBorder(BorderFactory.createTitledBorder("Selecione um evento"));
         panel.add(scroll, BorderLayout.CENTER);
 
-        // Rodapé com botão detalhes e fechar
         JPanel footer = new JPanel(new FlowLayout(FlowLayout.RIGHT, 10, 10));
         JButton btnDetalhes = new JButton("Ver Detalhes");
         btnDetalhes.addActionListener(e -> mostrarDetalhes());
