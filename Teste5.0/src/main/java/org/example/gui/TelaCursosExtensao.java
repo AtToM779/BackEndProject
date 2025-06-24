@@ -15,17 +15,17 @@ public class TelaCursosExtensao extends JFrame {
         setSize(600, 450);
         setLocationRelativeTo(null);
 
-        // Painel principal com borda
+     
         JPanel panel = new JPanel(new BorderLayout(15, 15));
         panel.setBorder(new EmptyBorder(15, 15, 15, 15));
         add(panel);
 
-        // Título
+      
         JLabel lblTitulo = new JLabel("Cursos de Extensão Disponíveis", SwingConstants.CENTER);
         lblTitulo.setFont(new Font("SansSerif", Font.BOLD, 20));
         panel.add(lblTitulo, BorderLayout.NORTH);
 
-        // Campo de busca
+    
         JPanel searchPanel = new JPanel(new BorderLayout(5, 5));
         txtBusca = new JTextField();
         txtBusca.setToolTipText("Buscar curso...");
@@ -35,7 +35,6 @@ public class TelaCursosExtensao extends JFrame {
         searchPanel.add(btnBusca, BorderLayout.EAST);
         panel.add(searchPanel, BorderLayout.BEFORE_FIRST_LINE);
 
-        // Lista de cursos com renderer customizado
         modelCursos = new DefaultListModel<>();
         carregarCursos();
         listCursos = new JList<>(modelCursos);
@@ -44,7 +43,6 @@ public class TelaCursosExtensao extends JFrame {
         scroll.setBorder(BorderFactory.createTitledBorder("Selecione um curso"));
         panel.add(scroll, BorderLayout.CENTER);
 
-        // Rodapé com botão fechar
         JPanel footer = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         JButton btnFechar = new JButton("Fechar");
         btnFechar.addActionListener(e -> dispose());
@@ -81,7 +79,7 @@ public class TelaCursosExtensao extends JFrame {
         }
     }
 
-    // Renderer para adicionar ícone e estilo às linhas
+
     private static class CursoCellRenderer extends JLabel implements ListCellRenderer<String> {
         public CursoCellRenderer() {
             setOpaque(true);
