@@ -28,12 +28,10 @@ public class TelaMensagens extends JFrame {
         panel.setBorder(new EmptyBorder(15,15,15,15));
         add(panel);
 
-        // Título
         JLabel lblTitulo = new JLabel("Caixa de Mensagens", SwingConstants.CENTER);
         lblTitulo.setFont(new Font("SansSerif", Font.BOLD, 20));
         panel.add(lblTitulo, BorderLayout.NORTH);
 
-        // Lista de mensagens
         modelMensagens = new DefaultListModel<>();
         carregarMensagens();
         listMensagens = new JList<>(modelMensagens);
@@ -42,7 +40,6 @@ public class TelaMensagens extends JFrame {
         scrollList.setBorder(BorderFactory.createTitledBorder("Recebidas"));
         panel.add(scrollList, BorderLayout.CENTER);
 
-        // Painel de envio de mensagem
         JPanel envioPanel = new JPanel(new BorderLayout(5,5));
         envioPanel.setBorder(BorderFactory.createTitledBorder("Escrever Mensagem"));
 
@@ -59,7 +56,6 @@ public class TelaMensagens extends JFrame {
     }
 
     private void carregarMensagens() {
-        // Exemplo de mensagens; futuramente carregar de repositório
         List<Mensagem> msgs = new ArrayList<>();
         msgs.add(new Mensagem("Admin", "Bem-vindo ao sistema!", LocalDateTime.now().minusDays(2)));
         msgs.add(new Mensagem("Coordenação", "Lembrete: matrícula até 30/06.", LocalDateTime.now().minusHours(5)));
@@ -79,7 +75,6 @@ public class TelaMensagens extends JFrame {
         JOptionPane.showMessageDialog(this, "Mensagem enviada!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
     }
 
-    // Classe interna para representar uma mensagem
     private static class Mensagem {
         String remetente;
         String conteudo;
@@ -88,7 +83,6 @@ public class TelaMensagens extends JFrame {
         @Override public String toString() { return remetente + ": " + conteudo; }
     }
 
-    // Renderer customizado para exibir remetente, conteúdo e data
     private static class MensagemRenderer extends JTextArea implements ListCellRenderer<Mensagem> {
         public MensagemRenderer() {
             setOpaque(true);
