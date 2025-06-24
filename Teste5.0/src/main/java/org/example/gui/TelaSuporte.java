@@ -17,26 +17,22 @@ public class TelaSuporte extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(10, 10));
 
-        // Título
         JLabel lblTitulo = new JLabel("Fale Conosco", SwingConstants.CENTER);
         lblTitulo.setFont(lblTitulo.getFont().deriveFont(Font.BOLD, 20f));
         add(lblTitulo, BorderLayout.NORTH);
 
-        // Painel de formulário
         JPanel formPanel = new JPanel(new GridBagLayout());
         formPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(8, 8, 8, 8);
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        // Assunto
         gbc.gridx = 0; gbc.gridy = 0;
         formPanel.add(new JLabel("Assunto:"), gbc);
         gbc.gridx = 1; gbc.weightx = 1.0;
         txtAssunto = new JTextField();
         formPanel.add(txtAssunto, gbc);
 
-        // Mensagem
         gbc.gridx = 0; gbc.gridy = 1; gbc.weightx = 0;
         formPanel.add(new JLabel("Mensagem:"), gbc);
         gbc.gridx = 1; gbc.weightx = 1.0; gbc.weighty = 1.0;
@@ -48,7 +44,6 @@ public class TelaSuporte extends JFrame {
 
         add(formPanel, BorderLayout.CENTER);
 
-        // Painel de botões
         JPanel btnPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 10, 10));
         btnEnviar = new JButton("Enviar");
         btnFechar = new JButton("Fechar");
