@@ -43,7 +43,6 @@ public class TelaProfessor extends JFrame {
 
         add(centro, BorderLayout.CENTER);
 
-        // ----- Sul: painel de atribuição de notas e logout -----
         JPanel sul = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5,5,5,5);
