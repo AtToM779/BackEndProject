@@ -58,7 +58,6 @@ public class TelaSuporte extends JFrame {
                         JOptionPane.WARNING_MESSAGE);
                 return;
             }
-            // Aqui você poderia chamar um serviço de envio de e-mail / API
             JOptionPane.showMessageDialog(this,
                     "Mensagem enviada com sucesso!\nAssunto: " + assunto,
                     "Enviado", JOptionPane.INFORMATION_MESSAGE);
