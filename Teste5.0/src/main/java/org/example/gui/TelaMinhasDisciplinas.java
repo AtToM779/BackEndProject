@@ -17,7 +17,6 @@ public class TelaMinhasDisciplinas extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(10,10));
 
-        // Lista de disciplinas
         DefaultListModel<String> modelLista = new DefaultListModel<>();
         List<Disciplina> disciplinas = aluno.getDisciplinasMatriculadas();
         for (Disciplina d : disciplinas) {
@@ -27,11 +26,9 @@ public class TelaMinhasDisciplinas extends JFrame {
         list.setBorder(BorderFactory.createTitledBorder("Disciplinas Matriculadas"));
         add(new JScrollPane(list), BorderLayout.WEST);
 
-        // Gráfico de pizza com legendas
         PieChartPanel chart = new PieChartPanel(disciplinas);
         add(chart, BorderLayout.CENTER);
 
-        // Botão fechar
         JButton btnFechar = new JButton("Fechar");
         btnFechar.addActionListener(e -> dispose());
         JPanel rodape = new JPanel(new FlowLayout(FlowLayout.RIGHT));
@@ -68,7 +65,6 @@ public class TelaMinhasDisciplinas extends JFrame {
                 g2.setColor(color);
                 g2.fillArc(x, y, diameter, diameter, startAngle, arc);
 
-                // Rótulo fora do gráfico
                 double mid = Math.toRadians(startAngle + arc / 2.0);
                 int labelRadius = diameter / 2 + margin / 2;
                 int lx = (int) (cx + Math.cos(mid) * labelRadius);
