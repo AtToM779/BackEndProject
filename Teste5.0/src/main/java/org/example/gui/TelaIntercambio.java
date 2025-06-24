@@ -25,7 +25,6 @@ public class TelaIntercambio extends JFrame {
         lblTitle.setFont(new Font("SansSerif", Font.BOLD, 20));
         panel.add(lblTitle, BorderLayout.NORTH);
 
-        // Search bar
         JPanel searchPanel = new JPanel(new BorderLayout(5, 5));
         txtFiltro = new JTextField();
         txtFiltro.setToolTipText("Filtrar por país ou universidade...");
@@ -35,7 +34,6 @@ public class TelaIntercambio extends JFrame {
         searchPanel.add(btnFilter, BorderLayout.EAST);
         panel.add(searchPanel, BorderLayout.BEFORE_FIRST_LINE);
 
-        // List of programs
         model = new DefaultListModel<>();
         carregarProgramas();
         list = new JList<>(model);
@@ -44,7 +42,6 @@ public class TelaIntercambio extends JFrame {
         scroll.setBorder(BorderFactory.createTitledBorder("Programas Disponíveis"));
         panel.add(scroll, BorderLayout.CENTER);
 
-        // Buttons
         JPanel footer = new JPanel(new FlowLayout(FlowLayout.RIGHT, 10, 10));
         JButton btnJoin = new JButton("Inscrever-se");
         btnJoin.addActionListener(e -> inscrever());
